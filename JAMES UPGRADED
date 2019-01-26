@@ -1,0 +1,32 @@
+#James Hoang Jan .21 2018
+
+#Counters[0] = Day Number
+#Counters[1] = Day Counter
+#Counters[2] = Day Average
+#Counters[3] = Day Total
+
+#Counters
+Counters = [1, 0, 0, 0]
+
+#Number of days
+temp = input("How many day's temperatures would you like to average? ")
+temp = int(temp)
+
+#Temp input for each day
+for x in range(0, temp):
+    
+    x = input("Day %d temp: " % (Counters[0]))
+    x = float(x)
+    
+    Counters[0] += 1
+    Counters[1] += 1
+
+    Counters[3] = Counters[3]+x
+    average = Counters[3]/Counters[1]
+
+    if(x > average):
+        Counters[2] += 1
+
+#Statements
+print("Average temp: %.2f" % (average))
+print("%d days were above average" % (Counters[2]))
